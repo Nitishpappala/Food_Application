@@ -1,0 +1,215 @@
+*{
+    margin:0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Tahoma;
+}
+body{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #f8f8f8;
+}
+#navbar {
+    background-color: #333;
+    position: fixed;
+    top: -50px;
+    width: 100%;
+    display: block;
+    transition: top 0.3s;
+  }
+#navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  #navbar a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+header{
+    height: 60px;
+    width: 100%;
+    background-color: #222121;
+    color: #f8f8f8;
+    display: flex;
+    align-items: center;
+}
+.container{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+nav ul li{
+    list-style: none;
+    display: inline;
+    margin-right: 20px;
+    font-weight: 500;
+}
+nav ul a{
+    text-decoration: none;
+    cursor: pointer;
+}
+nav ul a:hover{
+    color:#ccc;
+}
+.nitish{
+    width: 100%;
+    height: 400px;
+    background: url("WADImages/freshman.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    padding: 140px 0;
+    margin-bottom: 20px;
+}
+.nitish h2{
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+.nitish p{
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+.search{
+    max-width: 550px;
+    margin: 15px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.search input{
+    width: 70%;
+    padding: 10px;
+    outline: none;
+    border: 0;
+    border-radius: 15px 0px 0px 15px;
+    font-size: 1rem;
+    border: 1px solid rgb(255, 111, 0);
+}
+.search button{
+    padding: 10px 20px;
+    outline: none;
+    border: 0;
+    border-radius: 0px 15px 15px 0px;
+    font-size: 1rem;
+    background:rgb(255, 111, 0);
+    color: #fff;
+    cursor: pointer;
+}
+.canteens{
+    padding: 50px;
+}
+.canteens h1{
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+.can-sec{
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    column-gap: 10px;
+}
+.cards{
+    background: #fff;
+    margin:30px 10px;
+    border-radius: 15px;
+    border:1px solid #ccc;
+    overflow: hidden;
+    box-shadow: 0px 20px 40px rgb(0, 0, 0,0.1);
+}
+.cards img{
+    width:100%;
+    height: 400px;
+    object-fit: cover;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.cards h2{
+    font-size: 22px;
+    padding: 20px;
+}
+.cards p{
+    font-size: 18px;
+    padding: 20px;
+}
+.cards a{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    background: #333;
+    color: #fff;
+    padding:15px 0;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius:15px ;
+    cursor: pointer;
+}
+.canteen{
+    text-align: center;
+}
+footer{
+    background: #333;
+    padding: 20px 0;
+    color: #fff;
+    text-align: center;
+}
+.nav-list{
+    display: none;
+}
+.menu-icon{
+    font-size: 24px;
+    padding: 20px;
+    text-align: right;
+    cursor: pointer;
+    display: block;
+}
+@media only screen and (min-width:768px) {
+    .menu-icon{
+        display: none;
+    }
+    .nav-list{
+        display: block;
+    }
+}   
+.cards2{
+    background: #fff;
+    margin:10px 10px;
+    border-radius: 15px;
+    border:1px solid #ccc;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgb(0, 0, 0,0.1);
+}
+.cards2 img{
+    width:100%;
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.cards2 h2{
+    font-size: 18px;
+    padding: 10px;
+}
+.cards2 p{
+    font-size: 14px;
+    padding: 10px;
+}
+.cards2 a{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    background: #333;
+    color: #fff;
+    padding:15px 0;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius:15px ;
+    cursor: pointer;
+}

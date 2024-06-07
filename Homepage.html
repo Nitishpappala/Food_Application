@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vishnu Food</title>
+    <link rel="stylesheet" href="Home.css">
+    <style>
+      #bottom{
+        margin-top: 22px;
+      }
+      nav ul li :visited{
+        color: blue;
+      }
+      nav ul li :hover{
+        color: white;
+      }
+      .cards {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.5s ease-in-out;
+        animation-duration: 3s;
+      }
+      .cards.canteen:nth-child(odd) {
+        animation-name: slideInLeft;
+      }
+    
+     .cards.canteen:nth-child(even) {
+       animation-name: slideInRight;
+      }
+    
+      @keyframes slideInLeft {
+        from {
+          transform: translateX(-100%);
+        }
+        to {
+          transform: translateX(0);
+        }
+      }
+    
+      @keyframes slideInRight {
+        from {
+          transform: translateX(100%);
+        }
+        to {
+          transform: translateX(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+        <div class="container">
+            <h1 class="logo">Vishnu Food</h1>
+            <!--This is the nav bar-->
+            <nav>
+                <ul class="nav-list" id="index">
+                    <div class="menu-icon">&#9776;</div>
+                    <li><a href="#index">Home</a></li>
+                    <li><a href="#footer">About</a></li>
+                    <li><a href="orders.php">Orders</a></li>
+                    <li><a href="index.html">Log Out</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="navbar">
+          <a href="#index">Home</a>
+          <a href="#footer">About</a>
+          <a href="orders.php">Orders</a>
+          <a href="index.html">Log Out</a>
+
+        </div>
+      </header>
+      <!--This is search section-->
+      <section class="nitish">
+          <div class="nit-sec">
+            <h2>Welcome To Vishnu Foods</h2>
+            <p>Choose between FC and D2 to order Mouth Watering Food</p>
+            <form action="#" class="search">
+              <input type="text" placeholder="Search Food items">
+              <button type="submit">Search</button>
+            </form>
+          </div>
+      </section>
+      <!--This is canteen selection-->
+      <section class="canteens">
+        <h1>A fast-food outlet within the campus serves delicious non-vegetarian and vegetarian food at reasonable prices.</h1>
+        <div class="can-sec">
+        <div class="cards canteen">
+          <img src="WADImages/Food.webp" alt="">
+          <h2>FoodCourt</h2>
+          <p>The mini canteen of Bvrit where you can order Biryanis,FastFood and more</p>
+          <a href="foodcourt.html">Go to FoodCourt</a>
+        </div>
+        <div class="cards canteen">
+          <img src="WADImages/general_canteen.jpg" alt="">
+          <h2>Daffodils 2</h2>
+          <p>The main canteen of Bvrit Organised by College Management</p>
+          <a href="daffodils2.html" id="bottom">Go to Daffodils 2</a>
+          </div>
+        </div>
+      </section>
+      <footer id="footer">
+        <p>&copy; VMD&NP</p>
+        <h2>Website By: VMD&NP</h2>
+        <p>Contact us:</p>
+        <p>nitishpappala1324@gmail.com</p>
+        <p>Phone:63002 76690 </p>
+      </footer>
+      <script>
+        window.onscroll = function() {scrollFunction()};
+        
+        function scrollFunction() {
+          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("navbar").style.top = "0";
+          } else {
+            document.getElementById("navbar").style.top = "-50px";
+          }
+        }
+        </script>
+  </body>
+</html>

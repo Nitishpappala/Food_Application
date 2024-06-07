@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vishnu Food</title>
+    <link rel="stylesheet" href="Home.css">
+    <style>
+        nav ul li :visited {
+            color: blue;
+        }
+        nav ul li :hover {
+            color: white;
+        }
+        .showItems {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            margin: 30px;
+            font-size: 1.2rem;
+        }
+        h2 {
+            text-align: center;
+        }
+        ul li:nth-child(n) {
+            margin-bottom: 10px;
+        }
+        .paybtn {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #paynow {
+            background-color: #feac32;
+            color: white;
+            padding: 10px;
+            border-radius: 14%;
+            box-shadow: 0 0 15px rgba(254, 172, 50, 1);
+        }
+        .showItems {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            margin: 30px;
+            font-size: 1.2rem;
+            animation: fadeIn 3s ease-in-out;
+        }
+        #order-details {
+            border: 2px solid #333;
+            padding: 35px;
+            border-radius: 20px;
+            text-align: left;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .timing {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">Vishnu Food</h1>
+            <!-- This is the nav bar -->
+            <nav>
+                <ul class="nav-list" id="index">
+                    <div class="menu-icon">&#9776;</div>
+                    <li><a href="Homepage.html">Home</a></li>
+                    <li><a href="#footer">About</a></li>
+                    <li><a href="orders.php">Orders</a></li>
+                    <li><a href="index.html">Log Out</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="navbar">
+            <a href="Homepage.html">Home</a>
+            <a href="#footer">About</a>
+            <a href="orders.php">Orders</a>
+            <a href="index.html">Log Out</a>
+        </div>
+    </header>
+    <section class="nitish">
+        <div class="nit-sec">
+            <h2>Welcome To FoodCourt BVRIT</h2>
+            <p>Please Checkout your order</p>
+            <p>Verify your order and select the time at which you want to take your order</p>
+        </div>
+    </section>
+    <form action="addtodb.php" method="post" onsubmit="setFormValues()">
+        <h2>Your Order:</h2>
+        <div class="showItems">
+            <section id="order-details"></section>
+        </div>
+
+        <div class="timing">
+            <label for="timings">Select Time to take your order:</label>
+            <select id="timings" name="timings">
+                <option value="12:00 PM" name="timing">12:00 PM</option>
+                <!-- other options -->
+            </select>
+        </div>
+        <input type="hidden" id="selectedItems" name="selectedItems" value="">
+        <input type="hidden" id="totalAmount" name="totalAmount" value="">
+        <div class="paybtn">
+            <button id="paynow">Pay</button>
+        </div>
+    </form>
+    
+    <footer id="footer">
+        <p>&copy; VMD&NP</p>
+        <h2>Website By: VMD&NP</h2>
+        <p>Contact us:</p>
+        <p>nitishpappala1324@gmail.com</p>
+        <p>Phone:63002 76690 </p>
+    </footer>
+    <script>
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("navbar").style.top = "0";
+            } else {
+                document.getElementById("navbar").style.top = "-50px";
+            }
+        }
+
+        var selectedItems = JSON.parse(sessionStorage.getItem("selectedItems"));
+        var totalAmount = sessionStorage.getItem("totalAmount");
+
+        function generateOrderDetails() {
+            var orderDetailsSection = document.getElementById("order-details");
+            var paynow = document.getElementById("paynow");
+            paynow.textContent = "Pay " + totalAmount;
+
+            if (selectedItems && selectedItems.length > 0) {
+                var ul = document.createElement("ul");
+
+                selectedItems.forEach(function(item) {
+                    var li = document.createElement("li");
+                    li.textContent = item.name + " (Quantity: " + item.quantity + ")";
+                    ul.appendChild(li);
+                });
+
+                var totalAmountParagraph = document.createElement("p");
+                totalAmountParagraph.textContent = "Total Amount: Rs " + totalAmount;
+
+                orderDetailsSection.appendChild(ul);
+                orderDetailsSection.appendChild(totalAmountParagraph);
+            } else {
+                orderDetailsSection.textContent = "No items ordered.";
+            }
+        }
+
+        function setFormValues() {
+            console.log("Setting form values"); // Debugging log
+            document.getElementById('selectedItems').value = JSON.stringify(selectedItems);
+            document.getElementById('totalAmount').value = totalAmount;
+            console.log("Selected Items:", JSON.stringify(selectedItems)); // Debugging log
+            console.log("Total Amount:", totalAmount); // Debugging log
+        }
+
+        window.onload = generateOrderDetails;
+    </script>
+</body>
+</html>

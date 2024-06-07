@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+    margin: 10px;
+    background-color: #0059b3;
+}
+
+header h1{
+    text-align: center;
+    padding: 20px;
+}
+
+h2{
+    margin: 20px;
+}
+
+form{
+    font-size: 20px;
+    margin: 20px;
+}
+.Suggestions{
+    margin : 20px;
+    font-size: 18px;
+    font-style: bold;
+}
+h1{
+   text-align: center;
+}
+
+.items{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+    justify-content: space-between;
+}
+
+.imgd2{
+    display: inline-block;
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+    margin: 33px;
+}
+
+img{
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.price{
+    font-size: 18px;
+    margin-left: 40px;
+}
+
+button, .count{
+    display: inline-block;
+    margin: 10px;
+}

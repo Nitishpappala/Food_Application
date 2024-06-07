@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vishnu Food</title>
+    <link rel="stylesheet" href="Home.css">
+    <style>
+      .cart{
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        margin-bottom: 5px;
+      }
+      .btninc, .btndec {
+        background-color: #feac32;
+        color: white;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-left: 30px;
+        margin-right: 30px;
+        border-radius: 14%;
+      }
+      nav ul li :visited{
+        color: blue;
+      }
+
+      nav ul li :hover{
+        color: white;
+      }
+      .total {
+        margin-bottom: 15px;
+        display: flex;
+        justify-content: end;
+      }
+      .amount {
+        margin-right: 50px;
+        padding: 7px 30px;
+        background-color: #feac32;
+        color: white;
+        border-radius: 10%;
+        font-size: 16px;
+        box-shadow: 0 0 15px rgba(254, 172, 50, 1);
+      }
+    </style>
+    <script>
+        function showHint(str){
+            if(str.length == 0){
+                document.getElementById("txtHint").innerHTML = "";
+                return;
+            }
+            else{
+                var xmlxhttp = new XMLHttpRequest();
+                xmlxhttp.onreadystatechange = function(){
+                    if(this.readyState == 4 && this.status == 200){
+                        document.getElementById("txtHint").innerHTML = this.responseText;
+                    }
+                };
+                xmlxhttp.open("GET", "foodcourt.php?q=" + str, true);
+                xmlxhttp.send();
+            }
+        }
+    </script>
+  </head>
+  <body>
+    <header>
+        <div class="container">
+            <h1 class="logo">Vishnu Food</h1>
+            <!--This is the nav bar-->
+            <nav>
+                <ul class="nav-list" id="index">
+                    <div class="menu-icon">&#9776;</div>
+                    <li><a href="Homepage.html">Home</a></li>
+                    <li><a href="#footer">About</a></li>
+                    <li><a href="orders.php">Orders</a></li>
+                    <li><a href="index.html">Log Out</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="navbar">
+          <a href="Homepage.html">Home</a>
+          <a href="#footer">About</a>
+          <a href="orders.php">Orders</a>
+          <a href="index.html">Log Out</a>
+
+        </div>
+      </header>
+      <!--This is search section-->
+      <section class="nitish">
+          <div class="nit-sec">
+            <h2>Welcome To FoodCourt BVRIT</h2>
+            <p>Please select the food you want to order</p>
+            <form action="#" class="search">
+              <input type="text" placeholder="Search Food items" onkeyup="showHint(this.value)">
+              <button type="submit">Search</button>
+            </form>
+            <p>Suggestions: <span id="txtHint"></span></p>
+          </div>
+      </section>
+      <!--This is Food selection-->
+      <section class="canteens">
+        <h1>Please select your food</h1>
+        <div class="can-sec">
+            <div class="cards2">
+                <img src="WADImages/ChickenBiryani.jpeg" alt="">
+                <h2>Chicken Biryani</h2>
+                <p>Price:130rs</p>
+                <div class="cart">
+                  <button class="btndec" id="decval" onclick="decrement(0);">-</button>
+                  <p class="count" id="countalter-0">0</p>
+                  <button class="btninc" id="incval" onclick="increment(0);">+</button>
+                </div>
+            </div>
+            <div class="cards2">
+                <img src="WADImages/EggBiryani.jpg" alt="">
+                <h2>Egg Biryani</h2>
+                <p>Price:110rs</p>
+                <div class="cart">
+                  <button class="btndec" id="decval" onclick="decrement(1);">-</button>
+                  <p class="count" id="countalter-1">0</p>
+                  <button class="btninc" id="incval" onclick="increment(1);">+</button>
+                </div>
+            </div>
+            <div class="cards2">
+                <img src="WADImages/PaneerBiryani.jpg" alt="">
+                <h2>Paneer Biryani</h2>
+                <p>Price:110rs</p>
+                <div class="cart">
+                  <button class="btndec" id="decval" onclick="decrement(2);">-</button>
+                  <p class="count" id="countalter-2">0</p>
+                  <button class="btninc" id="incval" onclick="increment(2);">+</button>
+                </div>
+            </div>
+            <div class="cards2">
+              <img src="WADImages/VegBiryani.jpg" alt="">
+              <h2>Veg Biryani</h2>
+              <p>Price:100rs</p>
+              <div class="cart">
+                <button class="btndec" id="decval" onclick="decrement(3);">-</button>
+                <p class="count" id="countalter-3">0</p>
+                <button class="btninc" id="incval" onclick="increment(3);">+</button>
+              </div>
+            </div>
+            <div class="cards2">
+              <img src="WADImages/ChickenFriedRice.jpg" alt="">
+              <h2>Chicken Friedrice</h2>
+              <p>Price:80rs</p>
+              <div class="cart">
+                <button class="btndec" id="decval" onclick="decrement(4);">-</button>
+                <p class="count" id="countalter-4">0</p>
+                <button class="btninc" id="incval" onclick="increment(4);">+</button>
+              </div>
+            </div>
+            <div class="cards2">
+                <img src="WADImages/EggFriedRice.jpg" alt="">
+                <h2>Egg Friedrice</h2>
+                <p>Price:60rs</p>
+                <div class="cart">
+                  <button class="btndec" id="decval" onclick="decrement(5);">-</button>
+                  <p class="count" id="countalter-5">0</p>
+                  <button class="btninc" id="incval" onclick="increment(5);">+</button>
+                </div>
+            </div>
+            <div class="cards2">
+              <img src="WADImages/VegFriedRice.jpg" alt="">
+              <h2>Veg Friedrice</h2>
+              <p>Price:50rs</p>
+              <div class="cart">
+                <button class="btndec" id="decval" onclick="decrement(6);">-</button>
+                <p class="count" id="countalter-6">0</p>
+                <button class="btninc" id="incval" onclick="increment(6);">+</button>
+              </div>
+            </div>
+            <div class="cards2">
+              <img src="WADImages/ChickenNoodles.jpeg" alt="">
+              <h2>Chicken Noodles</h2>
+              <p>Price:80rs</p>
+              <div class="cart">
+                <button class="btndec" id="decval" onclick="decrement(7);">-</button>
+                <p class="count" id="countalter-7">0</p>
+                <button class="btninc" id="incval" onclick="increment(7);">+</button>
+              </div>
+            </div>
+            <div class="cards2">
+                <img src="WADImages/EggNoodles.jpg" alt="">
+                <h2>Egg Noodles</h2>
+                <p>Price:60rs</p>
+                <div class="cart">
+                  <button class="btndec" id="decval" onclick="decrement(8);">-</button>
+                  <p class="count" id="countalter-8">0</p>
+                  <button class="btninc" id="incval" onclick="increment(8);">+</button>
+                </div>
+            </div>
+            <div class="cards2">
+              <img src="WADImages/VegNoodles.jpeg" alt="">
+              <h2>Veg Noodles</h2>
+              <p>Price:50rs</p>
+              <div class="cart">
+                <button class="btndec" id="decval" onclick="decrement(9);">-</button>
+                <p class="count" id="countalter-9">0</p>
+                <button class="btninc" id="incval" onclick="increment(9);">+</button>
+              </div>
+            </div>
+            <div class="cards2">
+              <img src="WADImages/ChickenRoll.jpeg" alt="">
+              <h2>Chicken Roll</h2>
+              <p>Price:80rs</p>
+              <div class="cart">
+                <button class="btndec" id="decval" onclick="decrement(10);">-</button>
+                <p class="count" id="countalter-10">0</p>
+                <button class="btninc" id="incval" onclick="increment(10);">+</button>
+              </div>
+            </div>
+            <div class="cards2">
+                <img src="WADImages/JeeraRice.jpg" alt="">
+                <h2>Jeera Rice</h2>
+                <p>Price:60rs</p>
+                <div class="cart">
+                  <button class="btndec" id="decval" onclick="decrement(11);">-</button>
+                  <p class="count" id="countalter-11">0</p>
+                  <button class="btninc" id="incval" onclick="increment(11);">+</button>
+                </div>
+            </div>
+            <div class="cards2">
+                <img src="WADImages/Parota.jpg" alt="">
+                <h2>Parota</h2>
+                <p>Price:80rs</p>
+                <div class="cart">
+                  <button class="btndec" id="decval" onclick="decrement(12);">-</button>
+                  <p class="count" id="countalter-12">0</p>
+                  <button class="btninc" id="incval" onclick="increment(12);">+</button>
+                </div>
+            </div>
+            <div class="cards2">
+              <img src="WADImages/Cocacola.jpg" alt="">
+              <h2>Coca cola</h2>
+              <p>Price:20rs</p>
+              <div class="cart">
+                <button class="btndec" id="decval" onclick="decrement(13);">-</button>
+                <p class="count" id="countalter-13">0</p>
+                <button class="btninc" id="incval" onclick="increment(13);">+</button>
+              </div>
+            </div>
+            <div class="cards2">
+              <img src="WADImages/Pepsi.jpeg" alt="">
+              <h2>Pepsi</h2>
+              <p>Price:20rs</p>
+              <div class="cart">
+                <button class="btndec" id="decval" onclick="decrement(14);">-</button>
+                <p class="count" id="countalter-14">0</p>
+                <button class="btninc" id="incval" onclick="increment(14);">+</button>
+              </div>
+            </div>
+            <div class="cards2">
+              <img src="WADImages/Badam Milk.jpeg" alt="">
+              <h2>Badam Milk</h2>
+              <p>Price:20rs</p>
+              <div class="cart">
+                <button class="btndec" id="decval" onclick="decrement(15);">-</button>
+                <p class="count" id="countalter-15">0</p>
+                <button class="btninc" id="incval" onclick="increment(15);">+</button>
+              </div>
+            </div>
+            <div class="cards2">
+              <img src="WADImages/Mountain Due.webp" alt="">
+              <h2>Mountain Due</h2>
+              <p>Price:20rs</p>
+              <div class="cart">
+                <button class="btndec" id="decval" onclick="decrement(16);">-</button>
+                <p class="count" id="countalter-16">0</p>
+                <button class="btninc" id="incval" onclick="increment(16);">+</button>
+              </div>
+            </div>
+            </div>
+          </section>
+
+          <div class="total">
+            <button class="amount">Pay: 0</button>
+          </div>
+
+          <footer id="footer">
+            <p>&copy; VMD&NP</p>
+            <h2>Website By: VMD&NP</h2>
+            <p>Contact us:</p>
+            <p>nitishpappala1324@gmail.com</p>
+            <p>Phone:63002 76690 </p>
+          </footer>
+      <script>
+        // When the user scrolls down 20px from the top of the document, slide down the navbar
+        window.onscroll = function() {scrollFunction()};
+        var totalAmount = 0;
+        
+        function scrollFunction() {
+          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("navbar").style.top = "0";
+          } else {
+            document.getElementById("navbar").style.top = "-50px";
+          }
+        }
+
+        function increment(itemIndex) {
+            var countElement = document.getElementById("countalter-" + itemIndex);
+            var count = parseInt(countElement.textContent);
+            count++;
+            countElement.textContent = count;
+
+            var priceElement = document.getElementsByClassName("cards2")[itemIndex].querySelector("p");
+            var priceText = priceElement.textContent.trim();
+            var price = parseInt(priceText.split(":")[1].replace("rs", "").trim()); // Extract and clean price
+            totalAmount += price;
+            updateTotal();
+          }
+
+          function decrement(itemIndex) {
+            var countElement = document.getElementById("countalter-" + itemIndex);
+            var count = parseInt(countElement.textContent);
+            if (count > 0) {
+                count--;
+                countElement.textContent = count;
+
+                var priceElement = document.getElementsByClassName("cards2")[itemIndex].querySelector("p");
+                var priceText = priceElement.textContent.trim();
+                var price = parseInt(priceText.split(":")[1].replace("rs", "").trim()); // Extract and clean price
+                totalAmount -= price;
+                updateTotal();
+            }
+          }
+
+          function updateTotal() {
+            var totalButton = document.querySelector(".amount");
+            totalButton.textContent = "Pay: " + totalAmount + "rs";
+          }
+
+          function redirectToLastPage() {
+            // Get the selected items
+            var selectedItems = [];
+            var totalAmount = 0;
+            var cards = document.querySelectorAll(".cards2");
+            for (var i = 0; i < cards.length; i++) {
+              var count = parseInt(cards[i].querySelector(".count").textContent);
+              if (count > 0) {
+                var itemName = cards[i].querySelector("h2").textContent;
+                var itemPrice = parseInt(cards[i].querySelector("p").textContent.split(":")[1].trim().replace("rs", ""));
+                selectedItems.push({ name: itemName, price: itemPrice, quantity: count });
+                totalAmount += itemPrice * count;
+              }
+            }
+          
+            sessionStorage.setItem("selectedItems", JSON.stringify(selectedItems));
+            sessionStorage.setItem("totalAmount", totalAmount);
+          
+            window.location.href = "lastpage.html";
+          }
+        
+          document.querySelector(".amount").addEventListener("click", redirectToLastPage);
+
+        </script>
+  </body>
+</html>
