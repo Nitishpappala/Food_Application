@@ -32,7 +32,7 @@ $mail->SMTPSecure = 'ssl';
 $mail->Host = 'smtp.gmail.com';
 $mail->Port = 465; 
 $mail->Username = 'nitishpappala1324@gmail.com'; 
-$mail->Password = 'dwtkqilfoqqanvoe';
+$mail->Password = 'dwtkfoqqanvoe';
 
 $mail->setFrom('nitishpappala1324@gmail.com', 'Vishnu Foods');
 $mail->addAddress($email);
